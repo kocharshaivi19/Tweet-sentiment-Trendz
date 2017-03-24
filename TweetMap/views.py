@@ -16,9 +16,9 @@ es = Elasticsearch(host = es_host,
                     verify_certs = True,
                     connection_class=RequestsHttpConnection)
 
-consumer_key = ' 4lu0KBdbkhRhK0zg4HEk9k3Wp'
+consumer_key = '4lu0KBdbkhRhK0zg4HEk9k3Wp'
 consumer_secret = 'gowCnsCRUXidVmathcHVnml4c2B2QEuDu6XM5PXs8Tp1HEg7bz'
-access_token = ' 4621122272-vpdd9KBuj0TPUETmBPcLIEfDK7puogaD1T9G6lq'
+access_token = '4621122272-vpdd9KBuj0TPUETmBPcLIEfDK7puogaD1T9G6lq'
 access_secret = '035CnvnwCdFoXNpMrpfslKGEZOfG7o3hurugofmKoTfMn'
 
 auth = OAuthHandler(consumer_key, consumer_secret)
