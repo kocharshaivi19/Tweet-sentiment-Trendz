@@ -8,7 +8,7 @@ from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_protect
 import geocoder
 
-es_host = '<Add-your-key>'
+es_host = 'search-cc2-es-saqujhrhu7owwkpnyxpoz3ynue.us-west-2.es.amazonaws.com'
 
 es = Elasticsearch(host = es_host,
                     port = 443,
@@ -16,10 +16,10 @@ es = Elasticsearch(host = es_host,
                     verify_certs = True,
                     connection_class=RequestsHttpConnection)
 
-consumer_key = '<Add-your-key>'
-consumer_secret = '<Add-your-key>'
-access_token = '<Add-your-key>'
-access_secret = '<Add-your-key>'
+consumer_key = ' 4lu0KBdbkhRhK0zg4HEk9k3Wp'
+consumer_secret = 'gowCnsCRUXidVmathcHVnml4c2B2QEuDu6XM5PXs8Tp1HEg7bz'
+access_token = ' 4621122272-vpdd9KBuj0TPUETmBPcLIEfDK7puogaD1T9G6lq'
+access_secret = '035CnvnwCdFoXNpMrpfslKGEZOfG7o3hurugofmKoTfMn'
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 authAPI = auth.set_access_token(access_token, access_secret)

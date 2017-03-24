@@ -314,10 +314,6 @@
             <h1>Trending Tweets <img title="Click for more info" src="http://www.bracebridge.ca/en/town-services/resources/Images/Button-Images/mayor-and-council-image1.jpg" id="imgkey" width="25" height="25">
             </h1>
             <p>Select a keyword to check for trend location</p>
-{#            <form id="textid" name="Form" method="POST">#}
-{#              {% csrf_token %}#}
-{#              <input id="inputid" type="text" name="search" placeholder="Search.." onsubmit="eval()">#}
-{#            </form>#}
             <form id="form1" method="POST">
                 {% csrf_token %}
                 <select name="Trending Topics" id="yr">
@@ -329,11 +325,6 @@
                 </select>
                 <input type="button" value="Submit" onclick="eval()"></input>
             </form>
-{#            <div id="results"><!-- Results are displayed here --></div>#}
-{#            <div id="fade"></div>#}
-{#            <div id="modal_image">#}
-{#                <img id="loader" src="images/loading.gif" />#}
-{#            </div>#}
             <!-- The Modal -->
             <div id="myModal" class="modal">
 
@@ -348,12 +339,7 @@
 
             </div>
             <div id="map"></div>
-{#            <div id='loadingimage' style='display:none'>#}
-{#                <div class="center">#}
-{#                    <img src="http://adrian-design.com/images/loading.gif"/>#}
-{#                </div>#}
-{#            </div>#}
-            <script src="https://maps.googleapis.com/maps/api/js?key=<Add-your-key>"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBMoblZSN1LRrImUEIM7YHpYePTy-oCpk"></script>
             <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"> </script>
             <script type="text/javascript">
                 var map;
@@ -422,8 +408,7 @@
 
                 function eval() {
                     var val = document.getElementById('yr').value;
-                    var myval = document.getElementById()
-                    alert(val);
+                    alert("Please wait..");
                     $.ajax({
                         url : "/filter/",
                         method : "POST",
