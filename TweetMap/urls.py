@@ -7,6 +7,9 @@ from .views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^home/',init, name='home'),
-    url(r'^filter/', filter, name='filter'),
+    # url(r'^home/',init, name='home'),
+    # url(r'^filter/', filter, name='filter'),
+    url(r'^senti/', senti_init, name='senti'),
+    url(r'^sentifilter/', sentifilter, name='sentifilter'),
+
 ]
