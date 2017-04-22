@@ -1,3 +1,4 @@
+{% load static %}
 <html lang="en">
 	<head>
         <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/cloud-computing-1/512/location-256.png" type="image/png" />
@@ -335,7 +336,7 @@
                 </select>
                 <input type="button" value="Submit" onclick="eval()"/>
 
-                <img  src="../../static/img/mix.png" width="15%" style="float: right" height="10%"/>
+                <img  src="{% static "img/mix.png" %}" width="15%" style="float: right" height="10%"/>
                 <br/>
                 <br/>
             </form>
@@ -457,16 +458,16 @@
                             for(var i=0; i<tweetmsgs.length;i++){
                                 var res = tweetmsgs[i];
                                 if (res.sentiment == 'positive') {
-                                    picture = '../../static/img/m1.png';
+                                    picture.src = "{% static "img/m1.png" %}";
                                     alert(picture);
 
                                 }
                                 else if (res.sentiment == 'neutral') {
-                                    picture = '../../static/img/m2.png';
+                                    picture.src = "{% static "img/m2.png" %}";
                                     alert(picture);
                                 }
                                 else {
-                                    picture = '../../static/img/m3.png';
+                                    picture.src = "{% static "img/m3.png" %}";
                                     alert(picture);
                                 }
                                 Marker(res.lat, res.longi, res.title, picture);
