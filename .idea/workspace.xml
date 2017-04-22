@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edeaeec5-9179-47c9-b522-b6796552cda4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TweetMap/templates/TweetMap/tweetsenti.html" afterPath="$PROJECT_DIR$/TweetMap/templates/TweetMap/tweetsenti.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tweets/settings.py" afterPath="$PROJECT_DIR$/Tweets/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,15 +37,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tweetsenti.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tweetsenti.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TweetMap/templates/TweetMap/tweetsenti.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="333" column="30" lean-forward="false" selection-start-line="333" selection-start-column="30" selection-end-line="333" selection-end-column="30" />
+            <state relative-caret-position="423">
+              <caret line="367" column="46" lean-forward="true" selection-start-line="367" selection-start-column="46" selection-end-line="367" selection-end-column="46" />
               <folding>
-                <element signature="e#10559#10975#0#HTML" expanded="true" />
-                <element signature="e#13032#15058#0#HTML" expanded="true" />
-                <element signature="e#13663#14864#0#HTML" expanded="true" />
+                <element signature="e#10726#11142#0#HTML" expanded="true" />
+                <element signature="e#13199#15141#0#HTML" expanded="true" />
+                <element signature="e#13830#14947#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tweets/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="125" column="15" lean-forward="false" selection-start-line="125" selection-start-column="15" selection-end-line="125" selection-end-column="15" />
+            <state relative-caret-position="-933">
+              <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -210,8 +211,8 @@
         <option value="$PROJECT_DIR$/TweetMap/kafkatweets.py" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/TweetMap/views.py" />
-        <option value="$PROJECT_DIR$/TweetMap/templates/TweetMap/tweetsenti.html" />
         <option value="$PROJECT_DIR$/Tweets/settings.py" />
+        <option value="$PROJECT_DIR$/TweetMap/templates/TweetMap/tweetsenti.html" />
       </list>
     </option>
   </component>
@@ -325,6 +326,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tweets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tweets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TweetMap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1006,18 +1029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TweetMap/templates/TweetMap/tweetsenti.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="333" column="30" lean-forward="false" selection-start-line="333" selection-start-column="30" selection-end-line="333" selection-end-column="30" />
-          <folding>
-            <element signature="e#10559#10975#0#HTML" expanded="true" />
-            <element signature="e#13032#15058#0#HTML" expanded="true" />
-            <element signature="e#13663#14864#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TweetMap/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1028,9 +1039,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tweets/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="125" column="15" lean-forward="false" selection-start-line="125" selection-start-column="15" selection-end-line="125" selection-end-column="15" />
+        <state relative-caret-position="-933">
+          <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TweetMap/templates/TweetMap/tweetsenti.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="367" column="46" lean-forward="true" selection-start-line="367" selection-start-column="46" selection-end-line="367" selection-end-column="46" />
+          <folding>
+            <element signature="e#10726#11142#0#HTML" expanded="true" />
+            <element signature="e#13199#15141#0#HTML" expanded="true" />
+            <element signature="e#13830#14947#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,4 +1,4 @@
-{% load static %}
+{% load staticfiles %}
 <html lang="en">
 	<head>
         <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/cloud-computing-1/512/location-256.png" type="image/png" />
@@ -336,7 +336,7 @@
                 </select>
                 <input type="button" value="Submit" onclick="eval()"/>
 
-                <img  src="{% static "img/mix.png" %}" width="15%" style="float: right" height="10%"/>
+                <img src="{% static "img/mix.png" %}" width="15%" style="float: right" height="10%"/>
                 <br/>
                 <br/>
             </form>
@@ -362,6 +362,10 @@
                 var map;
                 var bounds;
                 var markers = [];
+
+                var pos = "{% static 'img/m1.png' %}"
+                var neu = "{% static 'img/m2.png' %}"
+                var neg = "{% static 'img/m3.png' %}"
 
                 function initMap() {
                     var uluru = {lat: 38.68551, lng: -96.503906};
@@ -458,16 +462,16 @@
                             for(var i=0; i<tweetmsgs.length;i++){
                                 var res = tweetmsgs[i];
                                 if (res.sentiment == 'positive') {
-                                    picture.src = "{% static "img/m1.png" %}";
+                                    picture = pos;
                                     alert(picture);
 
                                 }
                                 else if (res.sentiment == 'neutral') {
-                                    picture.src = "{% static "img/m2.png" %}";
+                                    picture = neu;
                                     alert(picture);
                                 }
                                 else {
-                                    picture.src = "{% static "img/m3.png" %}";
+                                    picture = neg;
                                     alert(picture);
                                 }
                                 Marker(res.lat, res.longi, res.title, picture);
