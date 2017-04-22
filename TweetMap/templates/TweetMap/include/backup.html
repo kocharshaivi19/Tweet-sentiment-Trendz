@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/cloud-computing-1/512/location-256.png" type="image/png" />
+		<title>Tweets on Map</title>
+		<style>
+			#map{
+				height: 500px;
+			}
+		</style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tweet Map</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../static/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS
+    <link href="../../static/css/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">-->
+
+    <!-- Custom CSS -->
+    <link href="../../static/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../../static/css/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../static/css/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../static/css/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript
+    <script src="../../static/css/vendor/metisMenu/metisMenu.min.js"></script>-->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../../static/js/sb-admin-2.js"></script>
+    <!--<script src="../../static/js/marker.js"></script>-->
+    <script src="../../static/js/markercluster.js"></script>
+
+</head>
+    <body>
+      <div>
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <Text class="navbar-brand">TweetMap</Text>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-left">
+                <div class="form-group">
+                    <label>Tweets</label>
+                    <select id="twt" name="twt">
+                        <option value="Tweet">Tweet</option>
+                        <option value="Trump">Trump</option>
+                        <option value="Amazon">Amazon</option>
+                        <option value="Google">Google</option>
+                    </select>
+                </div>
+                <button type="submit" onclick="dropselection()">Submit</button>
+                <!--<li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Trump </a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Food </a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Snapchat </a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Google </a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Amazon </a>
+                        </li>
+                    </ul>
+                </li>-->
+            </ul>
+        </nav>
+
+        <div id="map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBMoblZSN1LRrImUEIM7YHpYePTy-oCpk" type="text/javascript">
+
+        </script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"> </script>
+        <script>
+                var map;
+                var marker;
+                var points = [];
+                var mapOptions;
+                var markers = [];
+                var markerCluster;
+                var bounds;
+                var currentKeyword = null;
+                var clusterOptions;
+                var sentiment_pic;
+                var tempTweets = [];
+                var location;
+                var data1 = {
+                    "tweetsentiment" :  [
+                        {lat: -31.563910, lng: 147.154312},
+                        {lat: -33.718234, lng: 150.363181},
+                        {lat: -33.727111, lng: 150.371124},
+                        {lat: -33.848588, lng: 151.209834},
+                        {lat: -33.851702, lng: 151.216968},
+                        {lat: -34.671264, lng: 150.863657},
+                        {lat: -35.304724, lng: 148.662905},
+                        {lat: -36.817685, lng: 175.699196},
+                        {lat: -36.828611, lng: 175.790222},
+                        {lat: -37.750000, lng: 145.116667},
+                        {lat: -37.759859, lng: 145.128708},
+                        {lat: -37.765015, lng: 145.133858},
+                        {lat: -37.770104, lng: 145.143299},
+                        {lat: -37.773700, lng: 145.145187},
+                        {lat: -37.774785, lng: 145.137978},
+                        {lat: -37.819616, lng: 144.968119},
+                        {lat: -38.330766, lng: 144.695692},
+                        {lat: -39.927193, lng: 175.053218},
+                        {lat: -41.330162, lng: 174.865694},
+                        {lat: -42.734358, lng: 147.439506},
+                        {lat: -42.734358, lng: 147.501315},
+                        {lat: -42.735258, lng: 147.438000},
+                        {lat: -43.999792, lng: 170.463352}
+                    ]
+                };
+                function initMap() {
+                    var uluru = {lat: 38.68551, lng: -96.503906};
+                  map = new google.maps.Map(document.getElementById('map'), {
+                      zoom: 4,
+                      center: uluru
+                    });
+                }
+
+                google.maps.event.addDomListener(window, 'load', initMap);
+
+                function Marker(lat, longi, title) {
+                      var pos = new google.maps.LatLng(lat, longi);
+                      var marker = new google.maps.Marker({
+                          position: pos,
+                          map: map,
+                          title: title
+                      });
+                      bounds.extend(pos);
+                }
+
+                /*function initMap() {
+                    var uluru = {lat: 38.68551, lng: -96.503906};
+
+                    map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 4,
+                        center: uluru
+                    });
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(51.5074, 0.1278),
+                        map : map
+                    });
+                    markers.push(marker);
+
+                    clusterOptions = {
+                    imagePath: '../css/img/m',
+                           };
+                    markerCluster = new MarkerClusterer(map, markers,clusterOptions);
+
+                    //tweetSearch(dropselect);
+                }
+                google.maps.event.addDomListener(window, 'load', initMap) */
+
+                 function dropselection() {
+                    var dropselect = document.getElementById("twt").value;
+                    alert(dropselect);
+                    //initMap(dropselect);
+                    //tweetSearch(dropselect);
+                     Marker(-31.563910, 147.154312, 'a');
+                }
+
+                function tweetSearch(dropselect) {
+                    alert("inside tweetsearch")
+                    alert(dropselect);
+                    drawMarkers(data1);
+                    // $.getJSON("keywordfilter", {keyword: dropselect})
+                    //     .done(function (data1) {
+                    //         drawMarkers(data1);
+                    //     })
+                    //     .fail(function (error) {
+                    //         console.log(error);
+                    //     });
+                }
+
+                function placeMarker(tweet) {
+                    location = new google.maps.LatLng(tweet.lat, tweet.lng);
+                    alert("hi");
+                    alert(location);
+                    /*var text = tweet.text;
+                    var sentiment = tweet.sentiment;
+                    var score = tweet.score;
+                    if(sentiment === "positive"){
+                         sentiment_pic = positive;
+                    }
+                    else if(sentiment === "negative"){
+                         sentiment_pic = negative;
+                    }
+                    else{
+                         sentiment_pic = neutral;
+                    }
+
+                     var tweetMarker = locations.map(function() {
+                        return new google.maps.Marker({
+                        position: location
+
+                      });
+                        });
+
+                     markers.push(tweetMarker);*/
+                };
+
+
+                /*function drawMarkers(tweetJSON) {
+                    // alert("hi");
+                    // alert(tweetJSON);
+                    tweets = tweetJSON.tweetsentiment;
+                    // alert(tweets);
+                    removeMarkers();
+                    $('#map').empty();
+                    markerCluster = null;
+                    $.each(tweets, function(i, tweet){
+                        if(tweet != undefined){
+                            placeMarker(tweet);
+                        }
+                    });
+
+                    if(markerCluster === null){
+                        markerCluster = new MarkerClusterer(map, markers, clusterOptions);
+                    }
+                    else{
+                        markerCluster.redraw();
+                    }
+                }
+
+
+                function removeMarkers(){
+                    for(i = 0; i < markers.length; i++){
+                        markers[i].setMap(null);
+                    }
+                    markers.length = 0;
+                    markerCluster.clearMarkers();
+                    deleteTempMarkers();
+                }
+
+
+                function deleteTempMarkers() {
+                    for (var i = 0; i < tempTweets.length; i++) {
+                      tempTweets[i].setMap(null);
+                    }
+                    tempTweets = [];
+                }*/
+
+
+
+       </script>
+        <!--  <input type="submit" onload="locationret()" id="loca" onclick="marking()"/>
+        <script type="text/javascript">
+            function marking() {
+
+                var locat = document.getElementById("loca").value;
+                alert(locat);
+                var tweetMarker = new google.maps.Marker({
+                    position: locat,
+                    map: map,
+                });
+            }
+        </script>-->
+      </div>
+    </body>
+</html>
