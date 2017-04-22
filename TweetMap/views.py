@@ -167,7 +167,7 @@ def sentifilter(request):
                                 "query": query.lower()
                             }
                         }
-                    tweets = es.search(index='tweetskafka-es',doc_type="tweet", body=
+                    tweets = es.search(index='tweetskafka',doc_type="tweet", body=
                                         {"sort" :[ {"id" : {"order" : "desc"} }], "from": 0, "size": 1000, "query": elasticQuery})
                     latlonginfo = []
                     for tweet in tweets['hits']['hits']:
