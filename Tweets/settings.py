@@ -29,7 +29,7 @@ GOOGLE_MAPS_API_KEY = 'AIzaSyDBMoblZSN1LRrImUEIM7YHpYePTy-oCpk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['twittermapenv.zduympb9vh.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['tweets-kafka.x2aaubz5zs.us-west-2.elasticbeanstalk.com']
 
 # Application definition
 
@@ -124,7 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+#STATIC_ROOT = 'static'
 
 MEDIA_ROOT = BASE_DIR
 
