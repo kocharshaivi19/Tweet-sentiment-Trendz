@@ -457,13 +457,14 @@
                             for(var i=0; i<tweetmsgs.length;i++){
                                 var res = tweetmsgs[i];
                                 if (res.sentiment == 'positive') {
-                                    picture = '../../static/img/m1.png';
+                                    picture = 'https://github.com/googlemaps/js-marker-clusterer/blob/gh-pages/images/m1.png';
+
                                 }
                                 else if (res.sentiment == 'neutral') {
-                                    picture = '../../static/img/m2.png';
+                                    picture = 'https://github.com/googlemaps/js-marker-clusterer/blob/gh-pages/images/m2.png';
                                 }
                                 else {
-                                    picture = '../../static/img/m3.png';
+                                    picture = 'https://github.com/googlemaps/js-marker-clusterer/blob/gh-pages/images/m3.png';
                                 }
                                 Marker(res.lat, res.longi, res.title, picture);
                             }
